@@ -3,7 +3,6 @@ package com.example.myapplication;
 import android.content.Intent;
 import android.graphics.Movie;
 import android.os.Bundle;
-import android.os.Parcelable;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -57,6 +56,15 @@ public class MainActivity extends AppCompatActivity implements RecipeDishAdapter
       Intent intent = new Intent(MainActivity.this, DetailActivity.class);
         RecipeDish recipeDish = recipeDishAdapter.getmRecipeDishList().get(itemclicked);
         intent.putExtra("Dish", recipeDish);
+        List<Ingredient> ingredientList = recipeDish.getIngredients();
+
+
+        intent.putExtra("myIngredientList", (Serializable) ingredientList);
+
+
+     Ingredient currentIngredient = ingredientList.get(itemclicked);
+    String IngredientText = currentIngredient.getIngredient();
+
 
 
 

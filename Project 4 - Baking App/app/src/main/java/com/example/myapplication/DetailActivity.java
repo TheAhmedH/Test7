@@ -17,25 +17,17 @@ public class DetailActivity extends AppCompatActivity {
     private IngredientsAdapter mIngredientsAdapter;
     private RecyclerView mIngredientRecyclerView;
 
-    RecipeDish mRecipeDish;
-
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
        setContentView(R.layout.activity_detail);
 
-
+       mIngredientList = (List<Ingredient>) getIntent().getSerializableExtra("myIngredientList");
        mIngredientRecyclerView = findViewById(R.id.ingredient_RV);
 
        mIngredientsAdapter = new IngredientsAdapter(mIngredientList, getApplicationContext());
 
        mIngredientRecyclerView.setAdapter(mIngredientsAdapter);
-
-       mRecipeDish = getIntent().getParcelableExtra("Dish");
-
-        mIngredientList = mRecipeDish.getIngredients();
-
-
 
 
     }

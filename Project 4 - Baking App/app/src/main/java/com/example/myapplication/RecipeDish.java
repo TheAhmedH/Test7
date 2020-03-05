@@ -1,15 +1,12 @@
 package com.example.myapplication;
 
-import android.os.Parcel;
-import android.os.Parcelable;
-
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
 import java.io.Serializable;
 import java.util.List;
 
-public class RecipeDish implements Parcelable {
+public class RecipeDish implements Serializable {
 
     @SerializedName("id")
     @Expose
@@ -39,33 +36,6 @@ public class RecipeDish implements Parcelable {
         this.servings = servings;
         this.image = image;
     }
-
-    protected RecipeDish(Parcel in) {
-        if (in.readByte() == 0) {
-            id = null;
-        } else {
-            id = in.readInt();
-        }
-        name = in.readString();
-        if (in.readByte() == 0) {
-            servings = null;
-        } else {
-            servings = in.readInt();
-        }
-        image = in.readString();
-    }
-
-    public static final Creator<RecipeDish> CREATOR = new Creator<RecipeDish>() {
-        @Override
-        public RecipeDish createFromParcel(Parcel in) {
-            return new RecipeDish(in);
-        }
-
-        @Override
-        public RecipeDish[] newArray(int size) {
-            return new RecipeDish[size];
-        }
-    };
 
     public Integer getId() {
         return id;
@@ -115,26 +85,4 @@ public class RecipeDish implements Parcelable {
         this.image = image;
     }
 
-    @Override
-    public int describeContents() {
-        return 0;
-    }
-
-    @Override
-    public void writeToParcel(Parcel dest, int flags) {
-        if (id == null) {
-            dest.writeByte((byte) 0);
-        } else {
-            dest.writeByte((byte) 1);
-            dest.writeInt(id);
-        }
-        dest.writeString(name);
-        if (servings == null) {
-            dest.writeByte((byte) 0);
-        } else {
-            dest.writeByte((byte) 1);
-            dest.writeInt(servings);
-        }
-        dest.writeString(image);
-    }
 }
