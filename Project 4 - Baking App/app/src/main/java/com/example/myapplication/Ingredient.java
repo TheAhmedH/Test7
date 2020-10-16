@@ -1,11 +1,10 @@
 package com.example.myapplication;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
-
 import java.io.Serializable;
 
-public class Ingredient implements Serializable {
 
+public class Ingredient implements Serializable {
     @SerializedName("quantity")
     @Expose
     private Double quantity;
@@ -15,7 +14,6 @@ public class Ingredient implements Serializable {
     @SerializedName("ingredient")
     @Expose
     private String ingredient;
-
 
     public Ingredient(Double quantity, String measure, String ingredient) {
         this.quantity = quantity;
