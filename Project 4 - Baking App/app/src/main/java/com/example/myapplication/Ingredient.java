@@ -16,6 +16,7 @@ public class Ingredient implements Serializable {
     private String ingredient;
 
     public Ingredient(Double quantity, String measure, String ingredient) {
+        
         this.quantity = quantity;
         this.measure = measure;
         this.ingredient = ingredient;
