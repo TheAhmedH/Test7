@@ -5,10 +5,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-
 import java.util.List;
 
 public class IngredientsAdapter extends RecyclerView.Adapter<IngredientsAdapter.IngredientsHolder> {
@@ -41,7 +39,6 @@ public class IngredientsAdapter extends RecyclerView.Adapter<IngredientsAdapter.
         holder.ingredientNameTV.setText(ingredientName);
     }
 
-
     @Override
     public int getItemCount() {
         return mIngredientList.size();
@@ -57,7 +54,6 @@ public class IngredientsAdapter extends RecyclerView.Adapter<IngredientsAdapter.
             ingredientNameTV = itemView.findViewById(R.id.ingredientName_TV);
             ingredientMeasureTV = itemView.findViewById(R.id.measure_TV);
             ingredientQuantityTV = itemView.findViewById(R.id.quantity_TV);
-
         }
     }
 }
