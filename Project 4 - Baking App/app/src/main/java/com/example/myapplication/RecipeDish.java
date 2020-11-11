@@ -1,13 +1,10 @@
 package com.example.myapplication;
-
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
-
 import java.io.Serializable;
 import java.util.List;
 
 public class RecipeDish implements Serializable {
-
     @SerializedName("id")
     @Expose
     private Integer id;
@@ -26,7 +23,6 @@ public class RecipeDish implements Serializable {
     @SerializedName("image")
     @Expose
     private String image;
-
 
     public RecipeDish(Integer id, String name, List<Ingredient> ingredients, List<Step> steps, Integer servings, String image) {
         this.id = id;
